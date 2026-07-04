@@ -1,0 +1,28 @@
+<% layout('layouts/boilerplate') %>
+
+    <body>
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <h1>Login for RoamRoom</h1>
+                <form action="/login" method="POST" novalidate class="needs-validation">
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Username:</label>
+                        <input type="text" name="username" class="form-control" placeholder="Enter Username"
+                            id="username" required>
+                        <div class="valid-feedback">
+                            Done
+                        </div>
+                        <div class="invalid-feedback">
+                            Please provide your Name.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password:</label>
+                        <input type="password" name="password" class="form-control" placeholder="Enter Password"
+                            id="password" required>
+                    </div>
+                    <button class="btn btn-success">Login</button>
+                </form>
+            </div>
+        </div>
+    </body>

@@ -1,0 +1,95 @@
+<% layout('layouts/boilerplate') %>
+
+    <body>
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <h2>Create New Listing</h2>
+                <form action="/listings" method="POST" novalidate class="needs-validation"
+                    enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Title:</label>
+                        <input type="text" name="listing[title]" class="form-control" placeholder="Enter Title"
+                            required>
+                        <div class="valid-feedback">
+                            Looks good title!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please provide a title.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Category:</label>
+                        <input type="text" name="listing[category]" class="form-control" placeholder="Enter Category:"
+                            required>
+                        <div class="valid-feedback">
+                            Looks good Category name!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please provide a Category name.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Description:</label>
+                        <input type="text" name="listing[description]" class="form-control"
+                            placeholder="Enter Description" required>
+                        <div class="valid-feedback">
+                            Looks good description!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please provide a description.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="imageURL" class="form-label">Image:</label>
+                        <!-- here type:file so that the user can upload an image file-->
+                        <input type="file" name="listing[image]" class="form-control" required>
+                        <div class="valid-feedback">
+                            Looks good image!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please provide an image.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="price" class="form-label">Price:</label>
+                        <input type="text" name="listing[price]" class="form-control" placeholder="Enter Price"
+                            required>
+                        <div class="valid-feedback">
+                            Looks good price!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please provide a price.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="location" class="form-label">Location:</label>
+                        <input type="text" name="listing[location]" class="form-control" placeholder="Enter Location"
+                            required>
+                        <div class="valid-feedback">
+                            Looks good location!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please provide a location.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="country" class="form-label">Country:</label>
+                        <input type="text" name="listing[country]" class="form-control" placeholder="Enter Country"
+                            required>
+                        <div class="valid-feedback">
+                            Looks good country!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please provide a country.
+                        </div>
+                    </div>
+                    <br><br>
+                    <div class="d-flex mb-3">
+                        <button type="submit" class="btn btn-primary"
+                            style="background-color: #fe424d;color: white;border: none;">Create
+                            Listing</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>

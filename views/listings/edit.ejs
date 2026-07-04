@@ -1,0 +1,91 @@
+<% layout('layouts/boilerplate') %>
+
+    <body>
+        <h2>Edit the Listing</h2>
+        <form action="/listings/<%= listing._id %>?_method=PUT" method="POST" novalidate class="needs-validation"
+            enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="title" class="form-label">Title:</label>
+                <input type="text" name="listing[title]" value="<%= listing.title %>" class="form-control"
+                    placeholder="Enter Title" required>
+                <div class="valid-feedback">
+                    Looks good title!
+                </div>
+                <div class="invalid-feedback">
+                    Please provide a title.
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Category:</label>
+                <input type="text" name="listing[category]" value="<%= listing.category %>" class="form-control"
+                    placeholder="Enter Category:" required>
+                <div class="valid-feedback">
+                    Looks good Category name!
+                </div>
+                <div class="invalid-feedback">
+                    Please provide a Category name.
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Description:</label>
+                <input type="text" name="listing[description]" value="<%= listing.description %>" class="form-control"
+                    placeholder="Enter Description" required>
+                <div class="valid-feedback">
+                    Looks good description!
+                </div>
+                <div class="invalid-feedback">
+                    Please provide a description.
+                </div>
+            </div>
+            <p>Original image:</p>
+            <div class="mb-3">
+                <img src="<%= originalImageUrl %>" width="300" height="auto" />
+            </div>
+            <div class=" mb-3">
+                <label for="imageURL" class="form-label">Image:</label>
+                <!-- here type:file so that the user can upload an image file-->
+                <input type="file" name="listing[image]" class="form-control" required>
+                <div class="valid-feedback">
+                    Looks good image!
+                </div>
+                <div class="invalid-feedback">
+                    Please provide an image.
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="price" class="form-label">Price:</label>
+                <input type="number" name="listing[price]" value="<%= listing.price %>" class="form-control"
+                    placeholder="Enter Price" required>
+                <div class="valid-feedback">
+                    Looks good price!
+                </div>
+                <div class="invalid-feedback">
+                    Please provide a price.
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="location" class="form-label">Location:</label>
+                <input type="text" name="listing[location]" value="<%= listing.location %>" class="form-control"
+                    placeholder="Enter Location" required>
+                <div class="valid-feedback">
+                    Looks good location!
+                </div>
+                <div class="invalid-feedback">
+                    Please provide a location.`
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="country" class="form-label">Country:</label>
+                <input type="text" name="listing[country]" value="<%= listing.country %>" class="form-control"
+                    placeholder="Enter Country" required>
+                <div class="valid-feedback">
+                    Looks good country!
+                </div>
+                <div class="invalid-feedback">
+                    Please provide a country.
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary"
+                style="background-color: #fe424d;color: white;border: none;">Update Listing</button>
+        </form>
+    </body>
