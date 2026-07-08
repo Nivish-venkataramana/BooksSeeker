@@ -9,8 +9,14 @@ const { validateListing } = require("../middleware.js");
 const listingController = require('../controllers/listing.js');
 const multer = require('multer');
 const { storage } = require("../cloudConfig.js");
+const { listingSchema } = require('../schema.js');
 const upload = multer({ storage });
 
+// Privacy Route
+router.get("/privacy", wrapAsync(listingController.privacy));
+
+// Terms Route
+router.get("/terms", wrapAsync(listingController.terms));
 
 //Academic Listings Route
 router.get("/academic", wrapAsync(listingController.academicListings));

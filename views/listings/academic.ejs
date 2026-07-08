@@ -36,7 +36,7 @@
                                     </p>
 
                                     <h5 class="text-success mb-3">
-                                        ₹ <%= listing.price %>
+                                        ₹ <%= listing.price %> + 18% GST =₹<%= listing.price+0.18*listing.price%>
                                     </h5>
 
                                     <a href="/listings/<%= listing._id %>" class="btn btn-dark rounded-pill">

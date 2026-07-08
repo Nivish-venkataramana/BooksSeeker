@@ -155,3 +155,12 @@ module.exports.medicalListings = async (req, res) => {
     res.render("listings/medical.ejs", { listings: medicalListings });
 };
 
+// Privacy route
+module.exports.privacy = async (req, res) => {
+    res.render("listings/privacy.ejs");
+}
+
+// Terms Route
+module.exports.terms = async (req, res) => {
+    res.render("listings/terms.ejs");
+}

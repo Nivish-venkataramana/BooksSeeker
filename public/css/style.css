@@ -65,8 +65,9 @@ body {
 
 .card-img-top {
     border-radius: 1rem !important;
-    width: 100% !important;
-    object-fit: cover !important;
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
 }
 
 .card-body {
@@ -136,7 +137,13 @@ body {
 /* Map */
 #map {
     height: 400px;
-    width: 80vh;
+    max-width: 100%;
+    height: 400px;
+    border-radius: 12px;
+}
+
+.btn {
+    white-space: nowrap;
 }
 
 /* logout */
@@ -495,4 +502,238 @@ body {
 
 .card-title {
     min-height: 60px;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+========================================== */
+
+/* Tablets */
+@media (max-width: 992px) {
+
+    .navbar {
+        height: auto;
+        padding: 10px 15px;
+    }
+
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .show-image {
+        height: 40vh;
+    }
+
+    #map {
+        width: 100%;
+        height: 350px;
+    }
+
+    .btns {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .user-profile,
+    .auth-profile {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+}
+
+
+/* Mobile */
+@media (max-width:768px) {
+
+    body {
+        font-size: 15px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    h3 {
+        font-size: 1.35rem;
+    }
+
+    .display-3,
+    .display-4,
+    .display-5 {
+        font-size: 2rem !important;
+    }
+
+    .lead {
+        font-size: 1rem;
+    }
+
+    .listing-card {
+        margin-bottom: 1.5rem;
+    }
+
+    .card-img-top {
+        height: 220px;
+        object-fit: cover;
+    }
+
+    .show-image {
+        height: 250px;
+    }
+
+    .btns {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btns .btn {
+        width: 100%;
+    }
+
+    .user-profile,
+    .auth-profile {
+
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+
+    }
+
+    .logout-btn,
+    .signup-btn,
+    .login-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    #map {
+        width: 100%;
+        height: 300px;
+    }
+
+    /* Footer */
+
+    .f-info {
+        height: auto;
+        padding: 20px 10px;
+        gap: 15px;
+    }
+
+    .f-info-socials {
+        order: 1;
+    }
+
+    .f-info-links {
+        order: 2;
+    }
+
+    /* Filters */
+
+    #filters {
+
+        gap: 14px;
+        padding: 10px;
+
+    }
+
+    .filter {
+
+        min-width: 60px;
+
+    }
+
+    .filter div {
+
+        font-size: 16px;
+
+    }
+
+    .filter p {
+
+        font-size: 10px;
+
+    }
+
+    /* Tax switch */
+
+    .tax-container {
+
+        justify-content: center;
+        padding: 10px;
+
+    }
+
+    .tax-box {
+
+        width: 100%;
+        justify-content: center;
+
+    }
+
+}
+
+
+/* Small Phones */
+
+@media (max-width:576px) {
+
+    body {
+        font-size: 14px;
+    }
+
+    .container {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+
+    .fa-compass {
+        font-size: 1.7rem;
+    }
+
+    .card-title {
+        min-height: auto;
+    }
+
+    .card-img-top {
+        height: 190px;
+    }
+
+    .show-image {
+        height: 200px;
+    }
+
+    .review_card .card-body {
+        padding: 15px !important;
+    }
+
+    .review_card h5 {
+        font-size: 0.95rem;
+    }
+
+    .review_card p {
+        font-size: 0.9rem;
+    }
+
+    #map {
+        height: 250px;
+    }
+
+    .btn {
+        font-size: 0.9rem;
+    }
+
+    .tax-box label {
+        font-size: 12px;
+    }
+
 }

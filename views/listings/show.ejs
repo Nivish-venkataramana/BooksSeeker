@@ -23,10 +23,11 @@
                         <p class="card-text">
                             <%= listing.description %>
                         </p>
-                        Price: &#8377;<%= listing.price.toLocaleString('en-IN') %>/10 days from borrow<br>
-                            Location: <%= listing.location %> <br>
-                                Country: <%= listing.country %>
-                                    </p>
+                        Price: &#8377;<%= listing.price.toLocaleString('en-IN') %>/10 days from borrow + 18% GST =₹<%=
+                                listing.price+0.18*listing.price%> <br>
+                                Location: <%= listing.location %> <br>
+                                    Country: <%= listing.country %>
+                                        </p>
                     </div>
                 </div>
                 </form>

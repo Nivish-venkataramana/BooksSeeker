@@ -1,22 +1,273 @@
 <% layout('layouts/boilerplate') %>
 
-    <body>
-        <h1>Welcome to the Home Page</h1>
-        <p>This is the home page of our application. You can navigate to different
-            sections using the menu above.</p>
-        <button style="border:none;background-color:transparent;">
-            <a href="/listings" class="btn btn-primary">View
-                Listings</a></button>
-        <h2>Signup to BooksSeeker at <a href="/signup">Signup</a>
-        </h2>
-        <br>
-        <h2>Login to BooksSeeker at <a href="/login">Login</a>
-        </h2>
-        <br>
-        <hr>
-        <h2>Our website is used by many people to approach Books</h2>
-        <h2>For contact the team at <a href="mailto:info@ourwebsite.com">BooksSeeker@gmail.com</a></h2>
+    <div class="container py-5">
 
-    </body>
+        <!-- Hero Section -->
+        <div class="text-center py-5">
+            <h1 class="display-3 fw-bold text-primary">
+                Welcome to BooksSeeker
+            </h1>
 
-    </html>
+            <p class="lead mt-4">
+                Find, Buy, Sell and Exchange books with students and readers across the community.
+            </p>
+
+            <p class="text-muted">
+                Academic • Fiction • Competitive Exams • Novels • Comics • Magazines • Self Help • Biography and many
+                more.
+            </p>
+
+            <div class="mt-4">
+                <a href="/listings" class="btn btn-primary btn-lg me-3">
+                    Browse Books
+                </a>
+
+                <% if(!currUser){ %>
+                    <a href="/signup" class="btn btn-success btn-lg">
+                        Join Now
+                    </a>
+                    <% } %>
+            </div>
+        </div>
+
+        <!-- Statistics -->
+        <div class="row text-center mb-5">
+
+            <div class="col-md-4 mb-3">
+                <div class="card shadow h-100">
+                    <div class="card-body">
+                        <i class="bi bi-book-fill display-4 text-primary"></i>
+                        <h3 class="mt-3">1000+</h3>
+                        <p class="text-muted">Books Listed</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <div class="card shadow h-100">
+                    <div class="card-body">
+                        <i class="bi bi-people-fill display-4 text-success"></i>
+                        <h3 class="mt-3">500+</h3>
+                        <p class="text-muted">Happy Readers</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <div class="card shadow h-100">
+                    <div class="card-body">
+                        <i class="bi bi-grid-fill display-4 text-warning"></i>
+                        <h3 class="mt-3">20+</h3>
+                        <p class="text-muted">Book Categories</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <hr class="my-5">
+
+        <!-- Features -->
+
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Why Choose BooksSeeker?</h2>
+        </div>
+
+        <div class="row text-center">
+
+            <div class="col-md-4 mb-4">
+                <div class="card shadow h-100">
+                    <div class="card-body">
+
+                        <i class="bi bi-journal-bookmark-fill display-3 text-primary"></i>
+
+                        <h4 class="mt-3">Thousands of Books</h4>
+
+                        <p class="text-muted">
+                            Browse books from multiple categories uploaded by users.
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card shadow h-100">
+                    <div class="card-body">
+
+                        <i class="bi bi-currency-rupee display-3 text-success"></i>
+
+                        <h4 class="mt-3">Affordable Prices</h4>
+
+                        <p class="text-muted">
+                            Buy quality second-hand books at student-friendly prices.
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card shadow h-100">
+                    <div class="card-body">
+
+                        <i class="bi bi-people-fill display-3 text-warning"></i>
+
+                        <h4 class="mt-3">Trusted Community</h4>
+
+                        <p class="text-muted">
+                            Connect directly with genuine buyers and sellers.
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <hr class="my-5">
+
+        <!-- Categories -->
+
+        <div class="text-center">
+
+            <h2 class="fw-bold">Browse Categories</h2>
+
+            <div class="row mt-5">
+
+                <div class="col-md-3 mb-3">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-body">
+                            <i class="bi bi-mortarboard-fill display-4 text-primary"></i>
+                            <h5 class="mt-3">Academic</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 mb-3">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-body">
+                            <i class="bi bi-book-fill display-4 text-danger"></i>
+                            <h5 class="mt-3">Fiction</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 mb-3">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-body">
+                            <i class="bi bi-pencil-square display-4 text-success"></i>
+                            <h5 class="mt-3">Competitive Exams</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 mb-3">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-body">
+                            <i class="bi bi-globe-central-south-asia display-4 text-info"></i>
+                            <h5 class="mt-3">More Categories</h5>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <hr class="my-5">
+
+        <!-- How It Works -->
+
+        <div class="text-center">
+
+            <h2 class="fw-bold">How BooksSeeker Works</h2>
+
+            <div class="row mt-5">
+
+                <div class="col-md-4 mb-4">
+
+                    <i class="bi bi-person-plus-fill display-3 text-primary"></i>
+
+                    <h4 class="mt-3">Create an Account</h4>
+
+                    <p class="text-muted">
+                        Sign up and become a member of BooksSeeker.
+                    </p>
+
+                </div>
+
+                <div class="col-md-4 mb-4">
+
+                    <i class="bi bi-search display-3 text-success"></i>
+
+                    <h4 class="mt-3">Explore Listings</h4>
+
+                    <p class="text-muted">
+                        Search books by title or category and find the perfect book.
+                    </p>
+
+                </div>
+
+                <div class="col-md-4 mb-4">
+
+                    <i class="bi bi-bag-check-fill display-3 text-warning"></i>
+
+                    <h4 class="mt-3">Buy or Sell</h4>
+
+                    <p class="text-muted">
+                        Contact owners, purchase books or upload your own listings.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <% if(!currUser){ %>
+
+            <hr class="my-5">
+
+            <!-- Call To Action -->
+
+            <div class="bg-primary text-white rounded-4 p-5 text-center">
+
+                <h2>Ready to Start Reading?</h2>
+
+                <p class="lead">
+                    Join thousands of readers using BooksSeeker to buy and sell books.
+                </p>
+
+                <a href="/signup" class="btn btn-light btn-lg me-3">
+                    Sign Up
+                </a>
+
+                <a href="/login" class="btn btn-outline-light btn-lg">
+                    Login
+                </a>
+
+            </div>
+
+            <% } %>
+
+                <hr class="my-5">
+
+                <!-- Contact -->
+
+                <div class="text-center mb-5">
+
+                    <h3 class="fw-bold">Need Help?</h3>
+
+                    <p class="text-muted">
+                        Have questions? We'd love to hear from you.
+                    </p>
+
+                    <a href="mailto:BooksSeeker@gmail.com" class="btn btn-outline-primary">
+                        <i class="bi bi-envelope-fill me-2"></i>
+                        BooksSeeker@gmail.com
+                    </a>
+
+                </div>
+
+    </div>

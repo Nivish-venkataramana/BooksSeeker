@@ -106,7 +106,9 @@
                             </h5>
                             <p class="card-text">&#8377;
                                 <%=listing.price.toLocaleString('en-IN') %>&nbsp;&nbsp;&nbsp;/10 days from borrow
-                                    <i class="tax-info" style="display: none;"> &nbsp;&nbsp;&nbsp;+18%GST</i>
+                                    <i class="tax-info" style="display: none;">
+                                        &nbsp;+18%GST&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&#8377;<%=
+                                            listing.price+0.18*listing.price%> </i>
                             </p>
                         </div>
                     </div>
