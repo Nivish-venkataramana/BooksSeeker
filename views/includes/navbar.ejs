@@ -1,87 +1,111 @@
-<style>
-    .btn-search {
-        background-color: #fe424d;
-        color: white;
-        border: none;
-        border-radius: 20px;
-    }
-
-    .btn-search:hover {
-        background-color: #fe424d;
-        color: white;
-        border: none;
-    }
-
-    .btn-search i {
-        display: inline;
-        margin-right: 0.5rem;
-    }
-
-    .inp-search {
-        border-radius: 20px;
-        border: 1px solid;
-        padding: 0.5rem 1rem;
-    }
-</style>
-
-<nav class="navbar navbar-expand-lg bg-body-light mb-2 border-bottom sticky-top">
+<nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top shadow-sm">
     <div class="container-fluid">
-        <a class="navbar-brand" href="/"><i class="fa-solid fa-compass"></i>BooksSeeker</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+
+        <!-- Logo -->
+        <a class="navbar-brand fw-bold" href="/">
+            <i class="fa-solid fa-compass text-danger me-2"></i>
+            BooksSeeker
+        </a>
+
+        <!-- Mobile Toggle -->
+        <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+
             <span class="navbar-toggler-icon"></span>
         </button>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <!-- Navbar -->
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
+
+            <!-- Navigation Links -->
+            <ul class="navbar-nav me-auto mb-3 mb-lg-0">
+
                 <li class="nav-item">
-                    <a class="nav-link active" href="/"><i class="fa-regular fa-house"></i><b>Home</b></a>
+                    <a class="nav-link active" href="/">
+                        <i class="fa-solid fa-house me-2"></i>
+                        Home
+                    </a>
                 </li>
+
                 <li class="nav-item">
-                    <a class="nav-link" href="/listings"><i class="fa-solid fa-list"></i><b>Explore</b></a>
+                    <a class="nav-link" href="/listings">
+                        <i class="fa-solid fa-book me-2"></i>
+                        Explore
+                    </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/listings/new"><i class="fa-solid fa-plus"></i><b>Add new Listing</b></a>
-                </li>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <li>
-                    <form class="form-inline ms-auto" style="display: flex; align-items: center;">
-                        <input class="form-control mr-sm-2 inp-search" type="search" placeholder="Search libraries"
-                            aria-label="Search">
-                        <button class="btn btn-search  my-2 my-sm-0" type="submit"><i
-                                class="fa-solid fa-magnifying-glass"></i>Search</button>
-                    </form>
-                </li>
+
+                <% if(currUser){ %>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/listings/new">
+                            <i class="fa-solid fa-plus me-2"></i>
+                            Add Listing
+                        </a>
+                    </li>
+
+                    <% } %>
+
             </ul>
-        </div>
-        <div class="navbar-nav ms-auto">
-            <% if(!currUser) { %>
+
+            <!-- Search -->
+            <form class="search-form d-flex my-3 my-lg-0 mx-lg-3">
+
+                <input class="form-control inp-search" type="search" placeholder="Search books..." aria-label="Search">
+
+                <button class="btn btn-search ms-2" type="submit">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <span class="ms-1">Search</span>
+                </button>
+
+            </form>
+
+            <!-- Right Side -->
+
+            <% if(!currUser){ %>
+
                 <div class="auth-profile">
-                    <div class="auth-info">
-                        <i class="fa-solid fa-user-lock"></i>
-                    </div>
-                    <a href="/signup" class="signup-btn">
-                        <i class="fa-solid fa-user-plus"></i> Sign Up
-                    </a>
+
                     <a href="/login" class="login-btn">
-                        <i class="fa-solid fa-right-to-bracket"></i> Log In
+                        <i class="fa-solid fa-right-to-bracket me-1"></i>
+                        Login
                     </a>
+
+                    <a href="/signup" class="signup-btn">
+                        <i class="fa-solid fa-user-plus me-1"></i>
+                        Sign Up
+                    </a>
+
                 </div>
+
                 <% } %>
-                    <% if(currUser) { %>
+
+                    <% if(currUser){ %>
+
                         <div class="user-profile">
+
                             <div class="user-info">
+
                                 <i class="fa-solid fa-circle-user"></i>
-                                <span>
+
+                                <span class="username">
                                     <%= currUser.username %>
                                 </span>
+
                             </div>
+
                             <a href="/logout" class="logout-btn">
-                                <i class="fa-solid fa-right-from-bracket"></i>Logout</a>
+
+                                <i class="fa-solid fa-right-from-bracket me-1"></i>
+
+                                Logout
+
+                            </a>
+
                         </div>
+
                         <% } %>
+
         </div>
-    </div>
-    </div>
+
     </div>
 </nav>
