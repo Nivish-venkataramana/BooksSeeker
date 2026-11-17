@@ -4,7 +4,7 @@
 
 The platform enables users to **discover, create, share, review, and manage books** across multiple categories. It implements secure authentication, authorization, session management, server-side validation, cloud-based image storage, and centralized error handling.
 
-The application follows a **modular MVC (Model-View-Controller) architecture**, separating presentation, business logic, data access, routing, and middleware responsibilities.
+The application follows a **modular MVC ( Model-View-Controller ) architecture**, separating presentation, business logic, data access, routing, and middleware responsibilities.
 
 ## Live Application
 
